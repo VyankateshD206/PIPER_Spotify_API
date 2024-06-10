@@ -80,7 +80,7 @@ class EmotionRecognizer(nn.Module):
         out = self.fc4(out)       
         return out
 
-checkpoint = torch.load('pytorch_model1.pth')
+checkpoint = torch.load('web_app/pytorch_model1.pth')
 model = EmotionRecognizer(checkpoint['metadata']['input_size'], checkpoint['metadata']['hidden_size1'],checkpoint['metadata']['hidden_size2'],checkpoint['metadata']['hidden_size3'], checkpoint['metadata']['output'])
 model.load_state_dict(checkpoint['model_state_dict'])
 model.eval()
