@@ -49,10 +49,6 @@ if 'access_token' in st.session_state:
             st.warning("Please log in to Spotify.")
             return
 
-        if datetime.now().timestamp() > st.session_state.expire_at:
-            st.warning("Token expired. Please log in again.")
-            return
-
         headers = {
             'Authorization': f"Bearer {st.session_state.access_token}"
         }
