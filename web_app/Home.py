@@ -141,6 +141,6 @@ if 'access_token' not in st.session_state:
 
 if 'access_token' in st.session_state:
     st.write("#### Select a :red[page] from the :red[sidebar] to get started.")             
-st.image('spotify_image.png', caption='PIPER', use_column_width=True)  
+st.image('web_app/spotify_image.png', caption='PIPER', use_column_width=True) 
 
 
