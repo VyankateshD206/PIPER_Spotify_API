@@ -60,10 +60,12 @@ SPOTIPY_REDIRECT_URI = 'http://localhost:8501'
 API_BASE_URL = 'https://api.spotify.com/v1/'
 scope = 'user-read-private user-read-email playlist-read-private user-follow-read playlist-modify-private playlist-modify-public user-library-read user-top-read '
 
-with open('client_id.txt') as f:
-    SPOTIPY_CLIENT_ID = f.read()
-with open('client_secret.txt') as f:
-    SPOTIPY_CLIENT_SECRET = f.read()
+# with open('client_id.txt') as f:
+#     SPOTIPY_CLIENT_ID = f.read()
+# with open('client_secret.txt') as f:
+#     SPOTIPY_CLIENT_SECRET = f.read()
+SPOTIPY_CLIENT_ID = st.secrets["SPOTIPY_CLIENT_ID"]
+SPOTIPY_CLIENT_SECRET = st.secrets["SPOTIPY_CLIENT_SECRET"]
 
 def get_current_user_info():
     headers = {
