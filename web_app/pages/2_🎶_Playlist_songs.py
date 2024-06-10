@@ -154,11 +154,11 @@ if 'access_token' in st.session_state:
     playlist_options =[]
     i=1
     if 'items' in playlists:
-        st.write("playlist is there")
+        
         for playlist in playlists['items']:  
             playlist_options.append(f"{i}-{playlist['name']}")
             i=i+1
-    st.subheader("to get songs of a selected playlist:")
+    st.subheader("To get songs of a selected playlist:")
     selectP = st.selectbox('Select playlist of which you want songs:', playlist_options)
     if 'selected_playlist' not in st.session_state:
             st.session_state.selected_playlist = selectP
