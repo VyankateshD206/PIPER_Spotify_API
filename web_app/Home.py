@@ -53,6 +53,7 @@ def load_lottieurl(url:str):
         return None
     return r.json()
 
+st.header("Made by: :green[Vyankatesh Deshpande] | Btech CSE :green[IIT Jodhpur]")
 lottie1= load_lottieurl("https://lottie.host/703aaeb7-0b76-409c-9cc6-6141844695bb/ykIih7POIH.json")
 
 # Set your Spotify API credentials
@@ -141,7 +142,7 @@ if 'access_token' not in st.session_state:
 
 if 'access_token' in st.session_state:
     st.write("#### Select a :red[page] from the :red[sidebar] to get started.")             
-st.header("Made by: :green[Vyankatesh Deshpande] | Btech CSE :green[IIT Jodhpur]")
+
 st.image('web_app/spotify_image.png', caption='PIPER', use_column_width=True) 
 
 
