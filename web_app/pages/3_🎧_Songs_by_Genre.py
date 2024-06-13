@@ -168,7 +168,7 @@ if 'access_token' in st.session_state:
     playlists = get_playlists()
     playlist_options =[]
     i=1
-    if playlists['items']:
+    if playlists:
         for playlist in playlists['items']:    
             playlist_options.append(f"{i}-{playlist['name']}")
             i=i+1
