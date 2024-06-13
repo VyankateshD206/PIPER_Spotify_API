@@ -4,7 +4,7 @@ from datetime import datetime
 API_BASE_URL = 'https://api.spotify.com/v1/'
 st.set_page_config(page_title="Genre", page_icon="🎧" )
 st.title("Songs by Genre")
-st.write("Please log in to use this feature:")
+st.write("Please log in to use this feature; if already logged in ,ignore this message!")
 page_bg_img=""" 
 <style>
 [data-testid="stAppViewContainer"]{
