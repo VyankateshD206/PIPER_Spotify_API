@@ -31,6 +31,6 @@ PIPER is a web application that utilizes the Spotify API to provide personalized
 
 ## Orchestrating the Experience
 #### Instructions on how to use the application:
-Contact me to get more information about the Project
+Contact me to get more information about the Project <br/>
 [![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](vyankateshd206@gmail.com)
 
