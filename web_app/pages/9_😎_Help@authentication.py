@@ -1,4 +1,4 @@
-import streamlit as st
+ import streamlit as st
 from requests_oauthlib import OAuth2Session # type: ignore
 from requests.auth import HTTPBasicAuth
 import requests
@@ -6,7 +6,7 @@ import json
 
 AUTH_URL = 'https://accounts.spotify.com/authorize'
 TOKEN_URL = 'https://accounts.spotify.com/api/token'
-REDIRECT_URI = 'http://localhost:8501'  # my case is 'http://localhost:3000/callback'
+REDIRECT_URI = 'https://piper-spotify.streamlit.app/'  
 API_BASE_URL = 'https://api.spotify.com/v1/'
 SCOPE = [
     "user-read-email",
@@ -81,7 +81,7 @@ def get_current_user_info():
 def main():
     if 'access_token' in st.session_state:
         st.warning("If you are not logged in using the link at home page then use this to log in!")
-        st.write('###Spotify Authorization')
+        st.write('### Spotify Authorization')
         login()
         callback()
         
