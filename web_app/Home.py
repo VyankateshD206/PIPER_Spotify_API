@@ -56,7 +56,7 @@ def load_lottieurl(url:str):
 lottie1= load_lottieurl("https://lottie.host/703aaeb7-0b76-409c-9cc6-6141844695bb/ykIih7POIH.json")
 
 # Set your Spotify API credentials
-SPOTIPY_REDIRECT_URI = 'http://localhost:8501'
+SPOTIPY_REDIRECT_URI = 'https://piper-spotify.streamlit.app/'
 API_BASE_URL = 'https://api.spotify.com/v1/'
 scope = 'user-read-private user-read-email playlist-read-private user-follow-read playlist-modify-private playlist-modify-public user-library-read user-top-read '
 
