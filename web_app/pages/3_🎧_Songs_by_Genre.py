@@ -187,5 +187,4 @@ if 'access_token' in st.session_state:
     search_for_genre()
 
 else:
-    st.warning("Visit the localhost site that is opened on new tab if you have logged OR")
     st.error("Please go to the HOME page and log in")
