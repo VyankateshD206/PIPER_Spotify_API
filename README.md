@@ -31,12 +31,6 @@ PIPER is a web application that utilizes the Spotify API to provide personalized
 
 ## Orchestrating the Experience
 #### Instructions on how to use the application:
-
-1. Step 1: Login to the Web Application using the link given on Home page.<br/>
-           Refer the image given below:-<br/>
-   
-![Home Page](assets/PIPER_Home_Page.png)
-    
-3. Step 2 : Go to `MOOD Based Songs Option` and enter your MOOD to get Songs.
-4. Step 3 : Songs will be displayed. 
+Contact me to get more information about the Project
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](vyankateshd206@gmail.com)
 
