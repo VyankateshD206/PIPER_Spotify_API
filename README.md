@@ -3,13 +3,6 @@
 
 ![PIPER Logo](assets/piper_banner_img.png)
 
-## Team Members:
-   Mentor : Aditya Baranwal <br/>
-   Members :
-   Vyankatesh Deshpande<br/>
-   Rishika Goyal<br/>
-   Kiran<br/>
-
 ## Table of Contents
 
 - [The Melodic Marvel](#the-melodic-marvel)
