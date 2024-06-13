@@ -79,10 +79,6 @@ if 'access_token' in st.session_state:
 
 
     def get_playlists():
-        if datetime.now().timestamp() > st.session_state.expire_at:
-            st.warning("Token expired. Please log in again.")
-            return
-
         headers = {
             'Authorization': f"Bearer {st.session_state.access_token}"
         }
