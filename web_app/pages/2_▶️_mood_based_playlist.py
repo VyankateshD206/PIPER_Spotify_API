@@ -218,7 +218,7 @@ if 'access_token' in st.session_state:
     model = MoodClassifier()
     model.load_state_dict(torch.load('web_app/mood_predictor_model1.pth'))
     model.eval()
-    scaler = joblib.load('scaler1.joblib')
+    scaler = joblib.load('web_app/scaler1.joblib')
 
     # Load new data
     new_data = pd.read_csv('top_tracks_features.csv')
