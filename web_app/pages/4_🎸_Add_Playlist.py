@@ -3,7 +3,7 @@ import requests
 
 API_BASE_URL = 'https://api.spotify.com/v1/'
 st.set_page_config(page_title="New Playlist", page_icon="🎸" )
-
+st.title("Create New Playlist")
 page_bg_img=""" 
 <style>
 [data-testid="stAppViewContainer"]{
@@ -122,6 +122,7 @@ if 'access_token' in st.session_state:
                 remove_track_from_playlist(song_id, playlist_id, access_token)
 
     access_token = st.session_state.access_token
+    st.write("Enter a name for your playlist:")
     playlist_name = st.text_input("Enter a name for the new playlist:")
     if playlist_name != "":
         if 'playlist_id' not in st.session_state:
