@@ -3,7 +3,8 @@ import requests
 
 st.set_page_config(page_title="Song Queue", page_icon="🎵" )
 API_BASE_URL = 'https://api.spotify.com/v1/'
-
+st.title("Play Best 30 sec part of the selected songs in queue")
+#CSS for the WEB page:
 page_bg_img=""" 
 <style>
 [data-testid="stAppViewContainer"]{
@@ -91,17 +92,17 @@ if 'access_token' in st.session_state:
 
     if selected_playlist_index is not None:
         selected_playlist_id = playlists[selected_playlist_index]['id']
-        st.write(f"Selected Playlist: {playlists[selected_playlist_index]['name']}")
+        st.write(f"Selected Playlist: :green[{playlists[selected_playlist_index]['name']}]")
 
         # Fetch tracks of the selected playlist
         playlist_tracks = get_playlist_tracks(access_token, selected_playlist_id)
 
         # Display tracks of the selected playlist
-        st.write("Playlist Tracks:")
+        st.write("### Playlist Tracks:")
         display_playlist_tracks(playlist_tracks)
 
         # Add selected tracks to the queue
-        st.write("Add songs to queue:")
+        st.write("### Add songs to queue:")
         selected_tracks = st.multiselect("Select songs to add to queue", [track['track']['name'] for track in playlist_tracks])
 
         if selected_tracks:
@@ -118,7 +119,7 @@ if 'access_token' in st.session_state:
                         audio_urls.append(preview_url)
 
             if audio_urls:
-                st.write("Audio Player:")
+                st.write("### Audio Player:")
                 queue_index = 0
                 audio_player = st.audio(audio_urls[queue_index], format='audio/mp3')
 
