@@ -168,9 +168,10 @@ if 'access_token' in st.session_state:
     playlists = get_playlists()
     playlist_options =[]
     i=1
-    for playlist in playlists['items']:    
-        playlist_options.append(f"{i}-{playlist['name']}")
-        i=i+1
+    if playlists['items']:
+        for playlist in playlists['items']:    
+            playlist_options.append(f"{i}-{playlist['name']}")
+            i=i+1
     st.subheader("To get songs based on genre from your playlist:")
     select_genre = ['filmi', 'desi pop', 'modern bollywood', 'punjabi pop', 'indian instrumental']
     selectP = st.selectbox('Select playlist:', playlist_options)
