@@ -44,8 +44,9 @@ background-position: centre;
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 st.title(f"Welcome to the :green[PIPER] App!")
-
-
+st.write("Please send your email address to the given email so that we can add you to the allowlist of API ")
+st.write("My Email: vyankateshd206@gmail.com")
+st.write("Without Login you can use the emotion predictor!")
 #Animations:
 def load_lottieurl(url:str):
     r= requests.get(url)
