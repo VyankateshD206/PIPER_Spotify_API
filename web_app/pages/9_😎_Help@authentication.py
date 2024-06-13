@@ -49,10 +49,8 @@ background-position: centre;
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-with open('client_id.txt') as f:
-    CLIENT_ID = f.read()
-with open('client_secret.txt') as f:
-    CLIENT_SECRET = f.read()
+CLIENT_ID = st.secrets["SPOTIPY_CLIENT_ID"]
+CLIENT_SECRET = st.secrets["SPOTIPY_CLIENT_SECRET"]
 
 def login():
     spotify = OAuth2Session(CLIENT_ID, scope=SCOPE, redirect_uri=REDIRECT_URI)
