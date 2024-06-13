@@ -111,7 +111,7 @@ def main():
 
     if wav_audio_data is not None:
         st.audio(wav_audio_data, format="audio/wav")
-    st.write("## Download the recorded audio in your device and Upload to Get the MOOD")
+    st.write("### Download the recorded audio in your device and Upload to Get the MOOD")
     uploaded_file = st.file_uploader("Upload a voice file (in WAV format):", type=["wav"])
 
     FRAME_SIZE = 2048
