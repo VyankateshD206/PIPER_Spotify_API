@@ -87,33 +87,35 @@ def extract_track_features(top_tracks, access_token):
             }
             track_data.append(track_info)
     return track_data
-
+if 'access_token' in st.session_state:
 # Create Streamlit app
-def main():
-    st.title('My Top Spotify Tracks')
-    access_token = st.session_state.access_token
-    
-    if access_token:
-        # Fetch top tracks
-        top_tracks = get_top_tracks(access_token)
+    def main():
+        st.title('My Top Spotify Tracks')
+        access_token = st.session_state.access_token
         
-        if top_tracks:
-            # Extract features
-            track_data = extract_track_features(top_tracks, access_token)
+        if access_token:
+            # Fetch top tracks
+            top_tracks = get_top_tracks(access_token)
             
-            # Display DataFrame
-            df = pd.DataFrame(track_data)
-            st.write('Top Tracks:')
-            st.dataframe(df)
-            
-            # Save DataFrame to CSV
-            if st.button('Save as CSV'):
-                df.to_csv('top_tracks_features.csv', index=False)
-                st.success("DataFrame saved to 'top_tracks_features.csv'")
+            if top_tracks:
+                # Extract features
+                track_data = extract_track_features(top_tracks, access_token)
+                
+                # Display DataFrame
+                df = pd.DataFrame(track_data)
+                st.write('Top Tracks:')
+                st.dataframe(df)
+                
+                # Save DataFrame to CSV
+                if st.button('Save as CSV'):
+                    df.to_csv('top_tracks_features.csv', index=False)
+                    st.success("DataFrame saved to 'top_tracks_features.csv'")
+            else:
+                st.error("Failed to fetch top tracks. Please check your authentication.")
         else:
-            st.error("Failed to fetch top tracks. Please check your authentication.")
-    else:
-        st.error("Access token is missing. Please authenticate with Spotify.")
+            st.error("Access token is missing. Please authenticate with Spotify.")
+else:
+    st.error("Access token is missing. Please authenticate with Spotify.")        
 
 if __name__ == '__main__':
     main()
