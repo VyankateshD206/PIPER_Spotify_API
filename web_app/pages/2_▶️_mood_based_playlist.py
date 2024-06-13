@@ -216,7 +216,7 @@ if 'access_token' in st.session_state:
     
     # Load the saved model and scaler
     model = MoodClassifier()
-    model.load_state_dict(torch.load('mood_predictor_model1.pth'))
+    model.load_state_dict(torch.load('web_app/mood_predictor_model1.pth'))
     model.eval()
     scaler = joblib.load('scaler1.joblib')
 
