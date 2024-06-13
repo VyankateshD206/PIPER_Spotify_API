@@ -132,11 +132,10 @@ if 'access_token' in st.session_state:
             st.session_state.playlist_id = playlist_id
 
         songs= get_playlist_tracks(playlist_id)
-        st.write(playlist['name'])
-        st.write("=======================your songs fetch for selected playlist=============================")
+        st.write(f"### :green[{playlist['name']}]")
         for song in songs['items']:
             song = song['track']
-            st.write(f"{song['name']} {song['artists'][0]['name']} {song['artists'][0]['id']}")
+            st.write(f"{song['name']} by {song['artists'][0]['name']} ")
             preview_url = song['preview_url'] if 'preview_url' in song else None
             if st.button(f"Remove {song['name']}", key=song['name']):
                 remove_track_from_playlist(song['id'], playlist_id, access_token)
@@ -158,7 +157,7 @@ if 'access_token' in st.session_state:
         for playlist in playlists['items']:  
             playlist_options.append(f"{i}-{playlist['name']}")
             i=i+1
-    st.subheader("To get songs of a selected playlist:")
+    st.subheader("To get songs of a selected playlist and play the best 30 sec of that song:")
     selectP = st.selectbox('Select playlist of which you want songs:', playlist_options)
     if 'selected_playlist' not in st.session_state:
             st.session_state.selected_playlist = selectP
