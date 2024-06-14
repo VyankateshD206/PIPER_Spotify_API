@@ -46,7 +46,9 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 st.title(f"Welcome to the :green[PIPER] App!")
 st.write("Please send your email address to the given email so that we can add you to the allowlist of API ")
 st.write("My Email: vyankateshd206@gmail.com")
-st.write("Without Login you can use the emotion predictor!")
+st.write("If already added then ignore the above message!")
+
+st.write(":brown[Without Login you can use the emotion predictor!]")
 #Animations:
 def load_lottieurl(url:str):
     r= requests.get(url)
@@ -82,11 +84,10 @@ query_params =  st.query_params
 if "code" in query_params:
     st.session_state.code = query_params["code"]#[0]
 
-# if 'access_token' not in st.session_state:
-#     st.session_state['access_token']= None
 
 if 'refresh_token' not in st.session_state:
     st.session_state['refresh_token']=""
+    st.write("refresh token not in")
 
 if 'expire_at' not in st.session_state:
     st.session_state['expire_at']=""
@@ -118,6 +119,8 @@ st_lottie(
 
 if 'access_token' not in st.session_state:
     st.session_state['access_token']= None
+    st.write("hiii")
+    
 
     if code:  
         req_body = {
