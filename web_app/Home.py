@@ -87,7 +87,6 @@ if "code" in query_params:
 
 if 'refresh_token' not in st.session_state:
     st.session_state['refresh_token']=""
-    st.write("refresh token not in")
 
 if 'expire_at' not in st.session_state:
     st.session_state['expire_at']=""
@@ -108,20 +107,11 @@ st.header(f"Click [here]({auth_url}) to log in to :green[PIPER] using :green[Spo
 # Retrieve the authentication code from the URL
 code = st.session_state.code if "code" in st.session_state else None
 
-st_lottie(
-    lottie1,
-    speed=1,
-    reverse=False,
-    loop=True,
-    quality='high',
-    height=400,
-    )
 
 if 'access_token' not in st.session_state:
     st.session_state['access_token']= None
-    st.write("hiii")
     
-
+    
     if code:  
         req_body = {
             'code': code,
@@ -142,6 +132,15 @@ if 'access_token' not in st.session_state:
         else:
             # Show an error message if the 'access_token' key is not found
             st.error("Failed to authenticate user. Please authenticate.")    
+
+st_lottie(
+    lottie1,
+    speed=1,
+    reverse=False,
+    loop=True,
+    quality='high',
+    height=400,
+    )
 
 if 'access_token' in st.session_state:
     st.write("#### Select a :red[page] from the :red[sidebar] to get started.")             
