@@ -17,14 +17,17 @@ PIPER is a web application that utilizes the Spotify API to provide personalized
 ## Harmonious Features
 
 - #### Personalized Song Recommendations:
-
   The core feature of PIPER is its ability to provide personalized song recommendations based on the user's listening history, music preferences, and Spotify data.
+
+- #### Song Classifier:
+  It can classify songs in the playlist based on artists, genres and mood.
   
 - #### Spotify Integration: 
   PIPER seamlessly integrates with the Spotify API, allowing users to authenticate with their Spotify accounts and access their listening data securely.
 
 - #### Playlist Creation:
-  Users can create and manage personalized playlists based on their recommended songs, making it easy to discover and enjoy new music.
+  It creates Spotify playlist of mood-based songs into your account, that you can play from your Spotify app. Users can create and manage personalized playlists based on their recommended songs, making 
+  it easy to discover and enjoy new music.
 
 - #### Intuitive User Interface:
   PIPER features a modern and user-friendly interface, making it easy to navigate, explore recommendations, and manage playlists.
