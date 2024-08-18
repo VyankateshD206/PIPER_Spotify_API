@@ -236,41 +236,36 @@ if 'access_token' in st.session_state:
         _, predicted_moods = torch.max(predictions, 1)
 
     new_data['predicted_mood'] = predicted_moods.numpy()
-    st.write({
+    The_moods ={
     'Happy': 0,
     'Calm': 1,
     'Neutral': 2,
     'Sad': 3,
     'Very Sad': 4
-    })
-    
-    the_mood = st.number_input("enter the number for your MOOD")
-    st.session_state.the_mood = the_mood
-    st.write("the mood is ", {st.session_state.the_mood})
-    # Suggest five songs that are predicted 
-    required_songs = new_data[new_data['predicted_mood'] == st.session_state.the_mood]
-    # if required_songs['track_id']=="":
-    #     if the_mood==0:
-    #         the_mood= 1
-    #     if the_mood==4:
-    #         the_mood=3     
-    #     required_songs = new_data[new_data['predicted_mood'] == the_mood]
-    # Select the first five happy songs
-    five_songs = required_songs.head(5)
+    }
+    options = ['Happy' ,'Calm','Neutral','Sad','Very Sad']
 
+    with st.form("my_form"):
+        # Add input widgets inside the form
+        mood_V = st.selectbox("Select your mood", options)
+        playlist_name = st.text_input("Enter a name for the new playlist:")
+        # Create a submit button
+        submitted = st.form_submit_button("Submit")
     
-    playlist_name = st.text_input("Enter a name for the new playlist:")
-    if playlist_name != "":       
-        if 'playlist_id' not in st.session_state: 
+    if submitted:
+        st.write(f"The selected mood is {mood_V}")
+        mood_value = The_moods.get(mood_V, "Key not found")
+        required_songs = new_data[new_data['predicted_mood'] == mood_value]
+        five_songs = required_songs.head(5)
+
+        if playlist_name != "":       
             playlist_id= add_playlist(playlist_name)       
-            st.session_state.playlist_id = playlist_id
-        url_playlist = f"https://open.spotify.com/playlist/{st.session_state.playlist_id}"
+            url_playlist = f"https://open.spotify.com/playlist/{playlist_id}"            
+            for i in five_songs['track_id'] :
+                add_track_to_playlist(i, playlist_id, access_token)
+            st.success("Tracks added to playlist successfully!")
+            st.header(f"Go to [Spotify Web Player]({url_playlist})")
+            st.warning("Once playlist is created You need to LOG in Again to make new one")
 
-        # display_top_songs(st.session_state.playlist_id, access_token)
-        for i in five_songs['track_id'] :
-            add_track_to_playlist(i, st.session_state.playlist_id, access_token)
-        st.success("Tracks added to playlist successfully!")
-        st.header(f"Go to [Spotify Web Player]({url_playlist})")
-        st.warning("Once playlist is created You need to LOG in Again to make new one")
 else:
     st.error("Please go to the HOME page and log in")
