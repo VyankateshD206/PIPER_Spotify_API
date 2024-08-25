@@ -40,7 +40,6 @@ right: 2rem;
 background-image: url("https://th.bing.com/th/id/OIP.J0_5W76CuWJweiL8wPwScQHaD7?w=337&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
 background-position: centre;
 }
-
     
 </style>
 """
