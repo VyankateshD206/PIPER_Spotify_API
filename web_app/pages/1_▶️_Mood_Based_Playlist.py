@@ -12,6 +12,9 @@ API_BASE_URL = 'https://api.spotify.com/v1/'
 st.title("Mood Based Playlist of Your Top Tracks")
 page_bg_img=""" 
 <style>
+.stDeployButton{
+    visibility: hidden;
+}
 [data-testid="stAppViewContainer"]{
 background-image: url("https://t3.ftcdn.net/jpg/05/50/05/52/360_F_550055239_zK6qJTCOfodrftSLJM7bjcoUnF6lIl6Y.jpg");
 background-size: cover;
