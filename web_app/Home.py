@@ -10,6 +10,9 @@ st.set_page_config(page_title="Home", page_icon="🏠" )
 #https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Q_Mz2R04N9qHDaW7wpZMCVYdzzE2bZeRMQ&s
 page_bg_img=""" 
 <style>
+.stDeployButton{
+    visibility: hidden;
+}
 [data-testid="stAppViewContainer"]{
 background-image: url("https://t3.ftcdn.net/jpg/05/50/05/52/360_F_550055239_zK6qJTCOfodrftSLJM7bjcoUnF6lIl6Y.jpg");
 background-size: cover;
